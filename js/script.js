@@ -45,7 +45,7 @@ let members = [
 function printMember(){
     for(let i = 0; i < members.length; i++){
         let member = members[i];
-
+        document.getElementById('teamList').innerHTML += `<li class="mt-5">Membro team numero: ${i + 1}</li>`;
         for (let key in member) {
             console.log(`${member[key]}`);
             document.getElementById('teamList').innerHTML += `<li>${member[key]}</li>`;
