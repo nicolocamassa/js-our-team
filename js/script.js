@@ -48,6 +48,7 @@ function printMember(){
 
         for (let key in member) {
             console.log(`${member[key]}`);
+            document.getElementById('teamList').innerHTML += `<li>${member[key]}</li>`;
         }
     }
 }
