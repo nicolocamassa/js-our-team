@@ -48,7 +48,13 @@ function printMember(){
         document.getElementById('teamList').innerHTML += `<li class="mt-5">Membro team numero: ${i + 1}</li>`;
         for (let key in member) {
             console.log(`${member[key]}`);
-            document.getElementById('teamList').innerHTML += `<li>${member[key]}</li>`;
+
+            if(key == "image"){
+                document.getElementById('teamList').innerHTML += `<img src="./img/${member[key]}"></img>`;
+            }else{
+                document.getElementById('teamList').innerHTML += `<li>${member[key]}</li>`;
+            }
+            
         }
     }
 }
