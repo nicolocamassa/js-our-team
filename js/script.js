@@ -42,21 +42,33 @@ let members = [
     }
 ]
 
-function printMember(){
-    for(let i = 0; i < members.length; i++){
-        let member = members[i];
-        document.getElementById('teamList').innerHTML += `<li class="mt-5">Membro team numero: ${i + 1}</li>`;
-        for (let key in member) {
-            console.log(`${member[key]}`);
+function printMember() {
+    
 
-            if(key == "image"){
-                document.getElementById('teamList').innerHTML += `<img src="./img/${member[key]}"></img>`;
-            }else{
-                document.getElementById('teamList').innerHTML += `<li>${member[key]}</li>`;
+    for (let i = 0; i < members.length; i++) {
+
+        let member = members[i];
+        let imagePath = `./img/${member.image}`
+        let name = `${member.name}`
+        for (let key in member) {
+            if(key == 'image'){
+                document.getElementById('card' + (i + 1)).innerHTML += `<img class="card-img-top" src="${imagePath}" alt="Card image cap">`;
             }
+
+            document.getElementById('nameCard' + (i + 1)).innerHTML = `${member.name} ${member.surname} ` ;
+            document.getElementById('role' + (i + 1)).innerHTML = `${member.role}` ;
+           
             
+            /* console.log(`${member[key]}`);
+
+            if (key == "image") {
+                document.getElementById('card' + (i + 1)).innerHTML += `<img class="card-img-top" src="./img/${member[key]}" alt="Card image cap"></img>`;
+
+            } else {
+
+            } */
+            }
         }
     }
-}
 
-printMember();
+    printMember();
